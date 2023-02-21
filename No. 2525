@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void)
+{
+    int A; //Hour
+    int B; //Minute
+    int C; //Time
+    
+    scanf("%d %d", &A, &B);
+    scanf("%d", &C);
+    
+    B += C;
+    
+    if (B >= 60) {
+        A += B/60;
+        if (A > 23 && B > 59) {
+            A -= 24;
+        }
+        B = B % 60;
+    }
+    
+    printf("%d %d\n", A, B);
+    
+    return 0;
+}
