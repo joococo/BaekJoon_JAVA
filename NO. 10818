@@ -1,0 +1,27 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.IOException;
+import java.util.Arrays;
+
+public class Main {
+
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		
+		int T = Integer.parseInt(br.readLine().strip());
+		
+		String[] num = br.readLine().split(" ");
+		Integer[] number = new Integer[T];
+		
+		for(int i=0; i<T; i++) {
+			number[i] = Integer.parseInt(num[i]);
+		}
+		
+		Arrays.sort(number);
+		
+		int Max = number[T-1];
+		int min = number[0];
+		
+		System.out.println(min + " " + Max);
+	}
+}
